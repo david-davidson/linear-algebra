@@ -44,6 +44,6 @@ class Vector(object):
     return self.scalar_multiply(1 / self.get_magnitude())
 
   # Returns "dot product" of two vectors: each item multiplied by counterpart, then list summed
-  def dot_product(self, other):
+  def get_dot_product(self, other):
     items_multiplied = self._merge_with_transformation(other, lambda x, y: x * y)
     return sum(items_multiplied)

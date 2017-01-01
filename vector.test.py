@@ -50,7 +50,7 @@ class TestVectorMethods(unittest.TestCase):
     """
     vector1 = Vector([1,2])
     vector2 = Vector([3,4])
-    self.assertEqual(vector1.dot_product(vector2), 11)
+    self.assertEqual(vector1.get_dot_product(vector2), 11)
 
 if __name__ == '__main__':
     unittest.main()
