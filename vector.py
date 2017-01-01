@@ -20,10 +20,6 @@ class Vector(object):
   def __sub__(self, other):
     return Vector(self._merge_with_transformation(other, lambda x, y: x - y))
 
-  # Implicitly called in `*` operations
-  def __mul__(self, scale):
-    return Vector([item * scale for item in self.coords])
-
   # Merges two lists and applies `transform` to each item pair
   def _merge_with_transformation(self, other, transform):
     return [transform(x, y) for x, y
@@ -35,13 +31,17 @@ class Vector(object):
   def get_coords_rounded(self, decimal_places):
     return [round(x, decimal_places) for x in self.coords]
 
+  # Returns scalar muliplication (new Vector) of instance * scale
+  def scalar_multiply(self, scale):
+    return Vector([item * scale for item in self.coords])
+
   # Returns length of vector
   def magnitude(self):
     return math.sqrt(sum([x**2 for x in self.coords]))
 
   # Returns direction of vector
   def get_direction(self):
-    return self * (1 / self.magnitude())
+    return self.scalar_multiply(1 / self.magnitude())
 
   # Returns "dot product" of two vectors: each item multiplied by counterpart, then list summed
   def dot_product(self, other):
