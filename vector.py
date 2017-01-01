@@ -36,12 +36,12 @@ class Vector(object):
     return Vector([item * scale for item in self.coords])
 
   # Returns length of vector
-  def magnitude(self):
+  def get_magnitude(self):
     return math.sqrt(sum([x**2 for x in self.coords]))
 
   # Returns direction of vector
   def get_direction(self):
-    return self.scalar_multiply(1 / self.magnitude())
+    return self.scalar_multiply(1 / self.get_magnitude())
 
   # Returns "dot product" of two vectors: each item multiplied by counterpart, then list summed
   def dot_product(self, other):

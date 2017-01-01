@@ -33,7 +33,7 @@ class TestVectorMethods(unittest.TestCase):
     Returns a Vector's length (magnitude).
     """
     vector = Vector([3,4])
-    self.assertEqual(vector.magnitude(), 5)
+    self.assertEqual(vector.get_magnitude(), 5)
 
   def test_direction(self):
     """
