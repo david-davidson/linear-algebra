@@ -14,24 +14,32 @@ class Vector(object):
 
   # Implicitly called in `+` operations
   def __add__(self, other):
-    return self._merge_with_transformation(other, lambda x, y: x + y)
+    return Vector(self._merge_with_transformation(other, lambda x, y: x + y))
 
   # Implicitly called in `-` operations
   def __sub__(self, other):
-    return self._merge_with_transformation(other, lambda x, y: x - y)
+    return Vector(self._merge_with_transformation(other, lambda x, y: x - y))
 
   # Implicitly called in `*` operations
   def __mul__(self, scale):
     return Vector([item * scale for item in self.coords])
 
+  # Merges two lists and applies `transform` to each item pair
   def _merge_with_transformation(self, other, transform):
-    return Vector([transform(x, y) for x, y
+    return [transform(x, y) for x, y
       # ^ list comprehension iterates over list, like `map`
-      in zip(self.coords, other.coords)])
+      in zip(self.coords, other.coords)]
       # ^ `zip` merges equal-length lists into list of pairs
 
-  def get_magnitude(self):
+  # Returns length of vector
+  def magnitude(self):
     return math.sqrt(sum([x**2 for x in self.coords]))
 
+  # Returns direction of vector
   def get_direction(self):
-    return self * (1 / self.get_magnitude())
+    return self * (1 / self.magnitude())
+
+  # Returns "dot product" of two vectors: each item multiplied by counterpart, then list summed
+  def dot_product(self, other):
+    items_multiplied = self._merge_with_transformation(other, lambda x, y: x * y)
+    return sum(items_multiplied)
