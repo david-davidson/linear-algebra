@@ -31,6 +31,10 @@ class Vector(object):
       in zip(self.coords, other.coords)]
       # ^ `zip` merges equal-length lists into list of pairs
 
+  # Returns coords rounded to requested decimal place
+  def get_coords_rounded(self, decimal_places):
+    return [round(x, decimal_places) for x in self.coords]
+
   # Returns length of vector
   def magnitude(self):
     return math.sqrt(sum([x**2 for x in self.coords]))
