@@ -65,9 +65,9 @@ class Vector(object):
 
   def get_inner_product(self, other):
     """Returns, in both degrees and radians, the 'inner product' (angle between) two Vectors."""
-    dot_products_multiplied = self.get_dot_product(other)
+    dot_product = self.get_dot_product(other)
     magnitudes_multiplied = self.get_magnitude() * other.get_magnitude()
-    inner_product_radians = math.acos(dot_products_multiplied / magnitudes_multiplied)
+    inner_product_radians = math.acos(dot_product / magnitudes_multiplied)
     return {
       "radians": inner_product_radians,
       "degrees": math.degrees(inner_product_radians)
