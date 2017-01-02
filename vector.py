@@ -1,6 +1,7 @@
 import math
 
 class Vector(object):
+
   def __init__(self, coords):
     self.coords = tuple(coords)
 
