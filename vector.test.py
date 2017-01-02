@@ -26,7 +26,7 @@ class TestVectorMethods(unittest.TestCase):
     """
     vector = Vector([1,2])
     scale = 10
-    self.assertEqual(vector.scalar_multiply(10), Vector([10, 20]))
+    self.assertEqual(vector.get_scalar_multiply(10), Vector([10, 20]))
 
   def test_magnitude(self):
     """

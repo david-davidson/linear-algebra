@@ -32,7 +32,7 @@ class Vector(object):
     return [round(x, decimal_places) for x in self.coords]
 
   # Returns scalar muliplication (new Vector) of instance * scale
-  def scalar_multiply(self, scale):
+  def get_scalar_multiply(self, scale):
     return Vector([item * scale for item in self.coords])
 
   # Returns length of vector
@@ -41,7 +41,7 @@ class Vector(object):
 
   # Returns direction of vector
   def get_direction(self):
-    return self.scalar_multiply(1 / self.get_magnitude())
+    return self.get_scalar_multiply(1 / self.get_magnitude())
 
   # Returns "dot product" of two vectors: each item multiplied by counterpart, then list summed
   def get_dot_product(self, other):
