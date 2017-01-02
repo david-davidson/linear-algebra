@@ -52,5 +52,15 @@ class TestVectorMethods(unittest.TestCase):
     vector2 = Vector([3,4])
     self.assertEqual(vector1.get_dot_product(vector2), 11)
 
+  def test_inner_product(self):
+    """
+    Returns, in both degrees and radians, the 'inner product' (angle between) two Vectors.
+    """
+    vector1 = Vector([0,1])
+    vector2 = Vector([1,0])
+    inner_product = vector1.get_inner_product(vector2)
+    self.assertEqual(inner_product["degrees"], 90)
+    self.assertEqual(round(inner_product["radians"], 3), 1.571)
+
 if __name__ == '__main__':
     unittest.main()
