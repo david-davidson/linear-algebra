@@ -4,38 +4,38 @@ from vector import Vector
 class TestVectorMethods(unittest.TestCase):
 
   def test_addition(self): # methods must start with `test` to run
-    vector1 = Vector([1,2])
-    vector2 = Vector([3,4])
-    self.assertEqual(vector1 + vector2, Vector([4,6]))
+    v = Vector([1,2])
+    w = Vector([3,4])
+    self.assertEqual(v + w, Vector([4,6]))
 
   def test_subtraction(self):
-    vector1 = Vector([1,2])
-    vector2 = Vector([3,4])
-    self.assertEqual(vector1 - vector2, Vector([-2,-2]))
+    v = Vector([1,2])
+    w = Vector([3,4])
+    self.assertEqual(v - w, Vector([-2,-2]))
 
   def test_scalar_multiplication(self):
-    vector = Vector([1,2])
+    v = Vector([1,2])
     scale = 10
-    self.assertEqual(vector.get_scalar_multiply(10), Vector([10, 20]))
+    self.assertEqual(v.get_scalar_multiply(10), Vector([10, 20]))
 
   def test_magnitude(self):
-    vector = Vector([3,4])
-    self.assertEqual(vector.get_magnitude(), 5)
+    v = Vector([3,4])
+    self.assertEqual(v.get_magnitude(), 5)
 
   def test_direction(self):
-    vector = Vector([1,2])
-    unit_vector = vector.get_direction()
+    v = Vector([1,2])
+    unit_vector = v.get_direction()
     self.assertEqual(unit_vector.get_coords_rounded(3), [0.447, 0.894])
 
   def test_dot_product(self):
-    vector1 = Vector([1,2])
-    vector2 = Vector([3,4])
-    self.assertEqual(vector1.get_dot_product(vector2), 11)
+    v = Vector([1,2])
+    w = Vector([3,4])
+    self.assertEqual(v.get_dot_product(w), 11)
 
   def test_inner_product(self):
-    vector1 = Vector([0,1])
-    vector2 = Vector([1,0])
-    inner_product = vector1.get_inner_product(vector2)
+    v = Vector([0,1])
+    w = Vector([1,0])
+    inner_product = v.get_inner_product(w)
     self.assertEqual(inner_product["degrees"], 90)
     self.assertEqual(round(inner_product["radians"], 3), 1.571)
 
