@@ -1,9 +1,11 @@
 import math
+from decimal import Decimal, getcontext
+getcontext().prec = 7
 
 class Vector(object):
 
   def __init__(self, coords):
-    self.coords = tuple(coords)
+    self.coords = tuple([Decimal(x) for x in coords])
 
   def __str__(self):
     return "Coordinates: {}".format(self.coords)
@@ -44,7 +46,7 @@ class Vector(object):
 
   def get_magnitude(self):
     """Returns a Vector's length (magnitude)."""
-    return math.sqrt(sum([x**2 for x in self.coords]))
+    return Decimal(math.sqrt(sum([x**2 for x in self.coords])))
 
   def get_direction(self):
     """
