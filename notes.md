@@ -5,6 +5,7 @@
  2]
   - Note different formatting: horizontal parens vs. vertical braces
   - Vectors not bound to any one point, are equal if the change they represent is equal
+  - Represented with "overbar": v̅ (where bar is over text)
 
 #### Operating on vectors
 * Addition: if two vectors were placed end to end, where would they end up?
@@ -20,3 +21,12 @@
 * Unrelated to scale, so computed using "unit vector" of magnitude 1.
 * Processing of finding unit vector: "normalizing". unit vector of v: "normalization" of v.
 * (oh, and if all coords 0, it's the "0 vector", which indicates no change, has no direction)
+
+#### Dot product
+* Multiple two vectors * each other (each item * its counterpart), then sum the list. Represented by a dot.
+* Not that useful on its own, but part of...
+
+#### Inner product (angle between vectors)
+* Angle between vectors, represented by theta (Θ)
+* Note that any two vectors have *two* angles, the "long way" and the "short way" -- we always use the short way
+* Represented by arc cosine of (dot product of two vectors) / (magnitudes of both vectors, multiplied)
