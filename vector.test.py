@@ -39,5 +39,19 @@ class TestVectorMethods(unittest.TestCase):
     self.assertEqual(inner_product["degrees"], 90)
     self.assertEqual(round(inner_product["radians"], 3), 1.571)
 
+  def test_parallel(self):
+    v = Vector([1,2])
+    w = Vector([-2,-4])
+    x = Vector([1,3])
+    self.assertTrue(v.is_parallel_with(w))
+    self.assertFalse(v.is_parallel_with(x))
+
+  def test_orthogonal(self):
+    v = Vector([1,2])
+    w = Vector([-2,1])
+    x = Vector([1,3])
+    self.assertTrue(v.is_orthogonal_to(w))
+    self.assertFalse(v.is_orthogonal_to(x))
+
 if __name__ == '__main__':
     unittest.main()

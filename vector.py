@@ -75,3 +75,12 @@ class Vector(object):
       "radians": inner_product_radians,
       "degrees": math.degrees(inner_product_radians)
     }
+
+  def is_parallel_with(self, other):
+    direction_self = self.get_direction()
+    direction_other = other.get_direction()
+    dot_product = direction_self.get_dot_product(direction_other)
+    return dot_product == Decimal(1) or dot_product == Decimal(-1)
+
+  def is_orthogonal_to(self, other):
+    return self.get_dot_product(other) == Decimal(0)
