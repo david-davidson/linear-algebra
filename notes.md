@@ -21,6 +21,7 @@
 * Unrelated to scale, so computed using "unit vector" of magnitude 1.
 * Processing of finding unit vector: "normalizing". unit vector of v: "normalization" of v.
 * (oh, and if all coords 0, it's the "0 vector", which indicates no change, has no direction)
+* Normalization of vector b expressed as u (with vector arrow) subscript b
 
 #### Dot product
 * Multiply two vectors * each other (each item * its counterpart), then sum the list. Represented by a dot.
