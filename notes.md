@@ -23,10 +23,14 @@
 * (oh, and if all coords 0, it's the "0 vector", which indicates no change, has no direction)
 
 #### Dot product
-* Multiple two vectors * each other (each item * its counterpart), then sum the list. Represented by a dot.
-* Not that useful on its own, but part of...
+* Multiply two vectors * each other (each item * its counterpart), then sum the list. Represented by a dot.
 
 #### Inner product (angle between vectors)
 * Angle between vectors, represented by theta (Θ)
 * Note that any two vectors have *two* angles, the "long way" and the "short way" -- we always use the short way
 * Represented by arc cosine of (dot product of two vectors) / (magnitudes of both vectors, multiplied)
+
+#### Parallel & orthogonal vectors
+* Vectors *parallel* if one is a scalar multiple of the other (or dot product is 1 or -1)
+* Vectors *orthogonal* if their dot product is 0
+* Zero vector parallel and orthogonal to all vectors, including itself!
