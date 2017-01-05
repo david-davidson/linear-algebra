@@ -1,4 +1,8 @@
 language: python
 python:
   - "2.7"
-script: python vector.test.py
+install:
+  - pip install pep8
+script:
+  - python vector.test.py
+  - pep8 *.py
