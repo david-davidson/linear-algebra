@@ -10,5 +10,6 @@ Covers:
   * Dot product
   * Inner product (difference in angle)
   * Parallel & orthogonal vectors
+  * Vector projections
 
 To play with the module, run `python -i vector.py` -- you'll now have the `Vector` class available in the REPL. To run unit tests, run `python vector.test.py`.

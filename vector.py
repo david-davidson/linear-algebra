@@ -66,3 +66,14 @@ class Vector(object):
   def is_orthogonal_to(self, other):
     """ Returns boolean indicating whether self is orthogonal to other Vector. """
     return self.get_dot_product(other) == Decimal(0)
+
+  def get_projection(self, other):
+    """ Returns component of self that's parallel to other. """
+    other_direction = other.get_direction()
+    scale = self.get_dot_product(other_direction)
+    return other_direction.get_scalar_multiply(scale)
+
+  def get_orthogonal_component(self, other):
+    """ Returns component of self that's orthogonal to other. """
+    projection = self.get_projection(other)
+    return self - projection

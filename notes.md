@@ -35,3 +35,11 @@
 * Vectors *parallel* if one is a scalar multiple of the other (or dot product is 1 or -1)
 * Vectors *orthogonal* if their dot product is 0
 * Zero vector parallel and orthogonal to all vectors, including itself!
+
+#### Vector projections
+* Imagine we have vector b, emanating from 0
+* Line l passes through it, extending in both directions
+* Now let's add another arbitrary vector, v, also emanating from 0
+* To "project" v onto b, we imagine rotating the angle at which we view both so that v and b are aligned. v will appear shorter; this shortened version is the "projection" of v onto b. That's proj(sub b)(v), or v" (two bars raised, a la superscript)
+* OK, we can express v as the sum of two other vectors: v_parallel (the projection vector), and v_perp (the one that's orthogonal to b). ||v_parallel|| = dot product (v, normalization of b). Then, v_parallel itself (as opposed to just its length) can be computed by multiplying that length * the normalization of b.
+* So... v" = (v.dot_product(b.normalization())) * b.normalization()

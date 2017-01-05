@@ -53,5 +53,17 @@ class TestVectorMethods(unittest.TestCase):
     self.assertTrue(v.is_orthogonal_to(w))
     self.assertFalse(v.is_orthogonal_to(x))
 
+  def test_projection(self):
+    v = Vector([-9.88,-3.264,-8.159])
+    w = Vector([-2.155,-9.353,-9.473])
+    projection_coords_rounded = v.get_projection(w).get_coords_rounded(3)
+    self.assertEqual(projection_coords_rounded, [-1.530, -6.640, -6.725])
+
+  def test_orthogonal_component(self):
+    v = Vector([-9.88,-3.264,-8.159])
+    w = Vector([-2.155,-9.353,-9.473])
+    orthogonal_coords_rounded = v.get_orthogonal_component(w).get_coords_rounded(3)
+    self.assertEqual(orthogonal_coords_rounded, [-8.350, 3.376, -1.434])
+
 if __name__ == '__main__':
     unittest.main()
