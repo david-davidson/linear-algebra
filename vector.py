@@ -47,7 +47,7 @@ class Vector(object):
     return sum(items_multiplied)
 
   def get_inner_product(self, other):
-    """ Returns, in both degrees and radians, the 'inner product' (angle between) two Vectors. """
+    """ Returns the 'inner product' (angle between) `self` and `other`. """
     dot_product = self.get_dot_product(other)
     magnitudes_multiplied = self.get_magnitude() * other.get_magnitude()
     inner_product_radians = math.acos(dot_product / magnitudes_multiplied)
@@ -57,23 +57,23 @@ class Vector(object):
     }
 
   def is_parallel_with(self, other):
-    """ Returns boolean indicating whether self is parallel with other Vector. """
+    """ Returns boolean indicating whether `self` is parallel with `other`. """
     direction_self = self.get_direction()
     direction_other = other.get_direction()
     dot_product = direction_self.get_dot_product(direction_other)
     return dot_product == Decimal(1) or dot_product == Decimal(-1)
 
-  def is_orthogonal_to(self, other):
-    """ Returns boolean indicating whether self is orthogonal to other Vector. """
-    return self.get_dot_product(other) == Decimal(0)
-
   def get_projection(self, other):
-    """ Returns component of self that's parallel to other. """
+    """ Returns component of `self` that's parallel to `other`. """
     other_direction = other.get_direction()
     scale = self.get_dot_product(other_direction)
     return other_direction.get_scalar_multiply(scale)
 
+  def is_orthogonal_to(self, other):
+    """ Returns boolean indicating whether `self` is orthogonal to `other`. """
+    return self.get_dot_product(other) == Decimal(0)
+
   def get_orthogonal_component(self, other):
-    """ Returns component of self that's orthogonal to other. """
+    """ Returns component of `self` that's orthogonal to `other`. """
     projection = self.get_projection(other)
     return self - projection
