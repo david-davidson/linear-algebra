@@ -40,6 +40,16 @@ class TestVectorMethods(unittest.TestCase):
         self.assertEqual(inner_product["degrees"], 90)
         self.assertEqual(round(inner_product["radians"], 3), 1.571)
 
+    def test_parallelogram_area(self):
+        v = Vector([-8.987, -9.838, 5.031])
+        w = Vector([-4.268, -1.861, -8.866])
+        self.assertEqual(round(v.get_parallelogram_area(w), 3), 142.122)
+
+    def test_triangle_area(self):
+        v = Vector([1.5, 9.547, 3.691])
+        w = Vector([-6.007, 0.124, 5.772])
+        self.assertEqual(round(v.get_triangle_area(w), 3), 42.565)
+
     def test_parallel(self):
         v = Vector([1, 2])
         w = Vector([-2, -4])
@@ -65,6 +75,14 @@ class TestVectorMethods(unittest.TestCase):
         w = Vector([-2.155, -9.353, -9.473])
         coords_rounded = v.get_orthogonal_component(w).get_coords_rounded(3)
         self.assertEqual(coords_rounded, [-8.350, 3.376, -1.434])
+
+    def test_cross_product(self):
+        v = Vector([5, 3, -2])
+        w = Vector([-1, 0, 3])
+        cross_product = v.get_cross_product(w)
+        self.assertEqual(cross_product, Vector([9, -13, 3]))
+        self.assertTrue(cross_product.is_orthogonal_to(v))
+        self.assertTrue(cross_product.is_orthogonal_to(w))
 
 if __name__ == '__main__':
     unittest.main()

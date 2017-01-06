@@ -67,6 +67,14 @@ class Vector(object):
             "degrees": math.degrees(inner_product_radians)
         }
 
+    def get_parallelogram_area(self, other):
+        """ Returns area of parallelogram formed by self and other. """
+        return self.get_cross_product(other).get_magnitude()
+
+    def get_triangle_area(self, other):
+        """ Returns area of triangel formed by self and other. """
+        return self.get_parallelogram_area(other) / 2
+
     def is_parallel_with(self, other):
         """ Returns boolean indicating if `self` is parallel with `other`. """
         direction_self = self.get_direction()
@@ -88,3 +96,13 @@ class Vector(object):
         """ Returns component of `self` that's orthogonal to `other`. """
         projection = self.get_projection(other)
         return self - projection
+
+    def get_cross_product(self, other):
+        """ Returns cross product of self x other. Anticommutative! """
+        x1, y1, z1 = self.coords
+        x2, y2, z2 = other.coords
+        return Vector([
+            (y1 * z2 - y2 * z1),
+            -(x1 * z2 - x2 * z1),
+            (x1 * y2 - x2 * y1)
+        ])
