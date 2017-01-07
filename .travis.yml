@@ -4,5 +4,5 @@ python:
 install:
   - pip install pep8
 script:
-  - python vector.test.py
-  - pep8 *.py
+  - python tests
+  - pep8 vectors intersections tests

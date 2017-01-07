@@ -83,6 +83,3 @@ class TestVectorMethods(unittest.TestCase):
         self.assertEqual(cross_product, Vector([9, -13, 3]))
         self.assertTrue(cross_product.is_orthogonal_to(v))
         self.assertTrue(cross_product.is_orthogonal_to(w))
-
-if __name__ == '__main__':
-    unittest.main()
